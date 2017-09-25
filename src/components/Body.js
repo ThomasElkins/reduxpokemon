@@ -1,12 +1,12 @@
 import React, { Component } from 'react';
 
-class BodyContainer extends Component {
+class Body extends Component {
   render () {
     return (
       <div>
-        <h2>I'm the body</h2>
+        <h2>I'm the Body</h2>
       </div>
     )
   }
 }
-export default BodyContainer;
+export default Body;
