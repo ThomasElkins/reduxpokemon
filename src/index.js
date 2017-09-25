@@ -6,8 +6,9 @@ import registerServiceWorker from './registerServiceWorker';
 import { Provider } from 'react-redux';
 import { createStore, applyMiddleware} from 'redux';
 import logger from 'redux-logger';
+import pokemonState from './reducers/getPokemon';
 
-const store = createStore(applyMiddleware(logger))
+const store = createStore(pokemonState, applyMiddleware(logger))
 
 
 

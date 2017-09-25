@@ -4,7 +4,8 @@ class Body extends Component {
   render () {
     return (
       <div>
-        <h2>I'm the Body</h2>
+        <h1>{this.props.pokemonName}</h1>
+        <button onClick={this.props.getPokemon}>Catch a pokemon</button>
       </div>
     )
   }
