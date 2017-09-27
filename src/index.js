@@ -4,12 +4,10 @@ import './index.css';
 import App from './App';
 import registerServiceWorker from './registerServiceWorker';
 import { Provider } from 'react-redux';
-import { createStore, applyMiddleware} from 'redux';
-import logger from 'redux-logger';
-import pokemonState from './reducers/getPokemon';
-import promiseMiddleware from 'redux-promise-middleware'
+import Store from './store';
 
-const store = createStore(pokemonState, applyMiddleware(logger, promiseMiddleware))
+let store = new Store();
+
 
 
 

@@ -1,11 +1,13 @@
 import React, { Component } from 'react';
 import Body from '../components/Body';
 import { connect } from 'react-redux';
+import * as getPokemon from '../actions/getPokemon';
+import { bindActionCreators } from 'redux';
 
 class BodyContainer extends Component {
 
   render () {
-
+    console.log("props", this.props);
     return (
         <Body
           getPokemon={this.props.getPokemon}
@@ -23,14 +25,7 @@ const mapStateToProps = (state) => {
 
 const mapDispatchToProps = (dispatch) => {
   return {
-  getPokemon: () => dispatch ({
-    type: "GET_POKEMON",
-    pokeName: new Promise (resolve => {
-      fetch(`http://pokeapi.co/api/v2/pokemon/4`).then(response => {
-        resolve(response.json())
-      })
-    })
-  })
+    actions: bindActionCreators(getPokemon, dispatch)
 }
 }
 

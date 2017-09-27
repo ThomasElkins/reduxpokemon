@@ -1,15 +1,13 @@
 
-
-
-const pokemonState = (state = {name: ""}, action) => {
-  let nextState = {name: state.name}
+const pokemonState = (state = {}, action) => {
 
   switch(action.type) {
-      case 'GET_POKEMON_RESOLVED':
-        //   action.pokeName.then(res => {
-        //   nextState.name = res.data.name
-        // })
-        return nextState
+      case 'GET_POKEMON_PENDING':
+      console.log("action pending", action);
+        return state
+      case 'GET_POKEMON_FULFILLED':
+      console.log("action", action.payload);
+        return Object.assign({}, action.payload.data)
 
 
     default:
