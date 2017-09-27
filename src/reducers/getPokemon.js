@@ -1,15 +1,14 @@
-import axios from 'axios';
 
 
-const pokemonState = (state = {name: "default"}, action) => {
 
+const pokemonState = (state = {name: ""}, action) => {
   let nextState = {name: state.name}
 
   switch(action.type) {
-      case 'GET_POKEMON':
-          action.pokeName.then(res => {
-          nextState.name = res.data.name
-        })
+      case 'GET_POKEMON_RESOLVED':
+        //   action.pokeName.then(res => {
+        //   nextState.name = res.data.name
+        // })
         return nextState
 
 
